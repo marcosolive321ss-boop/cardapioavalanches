@@ -220,9 +220,7 @@
 
     .section-title { font-size: 14px; font-weight: 700; color: var(--accent); margin: 25px 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
     
-    .addr-row { display: flex; gap: 10px; }
-    .addr-grow { flex: 1; }
-    .addr-fixed { width: 100px; }
+    /* REMOVIDO: .addr-row, .addr-grow, .addr-fixed pois causavam o erro visual */
 
     /* INPUTS COM VALIDAÇÃO VISUAL */
     .clean-input { 
@@ -231,7 +229,7 @@
       -webkit-appearance: none; appearance: none;
       transition: all 0.2s;
     }
-    .clean-input:focus { border-color: var(--accent); }
+    .clean-input:focus { border-color: var(--accent); background: #333; }
     .input-error { border-color: #ff453a !important; background: rgba(255, 69, 58, 0.1) !important; animation: shake 0.4s; }
     .input-valid { border-color: #34c759 !important; background: rgba(52, 199, 89, 0.1) !important; }
     
@@ -363,10 +361,8 @@
 
       <input id="clientName" class="clean-input" placeholder="Seu Nome *">
       
-      <div class="addr-row">
-        <input id="clientAddress" class="clean-input addr-grow" placeholder="Rua e Bairro (pelo Mapa) *">
-        <input id="houseNumber" class="clean-input addr-fixed" placeholder="Nº *" type="number" inputmode="numeric">
-      </div>
+      <input id="clientAddress" class="clean-input" placeholder="Rua e Bairro (pelo Mapa) *">
+      <input id="houseNumber" class="clean-input" placeholder="Número da Casa *" type="tel" inputmode="numeric">
       
       <div class="section-title">💳 Pagamento</div>
       <div class="pay-list">
