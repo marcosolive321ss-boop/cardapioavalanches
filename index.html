@@ -220,7 +220,9 @@
 
     .section-title { font-size: 14px; font-weight: 700; color: var(--accent); margin: 25px 0 10px 0; text-transform: uppercase; letter-spacing: 0.5px; }
     
-    /* REMOVIDO: .addr-row, .addr-grow, .addr-fixed pois causavam o erro visual */
+    .addr-row { display: flex; gap: 10px; }
+    .addr-grow { flex: 1; }
+    .addr-fixed { width: 100px; }
 
     /* INPUTS COM VALIDAÇÃO VISUAL */
     .clean-input { 
@@ -229,7 +231,7 @@
       -webkit-appearance: none; appearance: none;
       transition: all 0.2s;
     }
-    .clean-input:focus { border-color: var(--accent); background: #333; }
+    .clean-input:focus { border-color: var(--accent); }
     .input-error { border-color: #ff453a !important; background: rgba(255, 69, 58, 0.1) !important; animation: shake 0.4s; }
     .input-valid { border-color: #34c759 !important; background: rgba(52, 199, 89, 0.1) !important; }
     
@@ -361,8 +363,10 @@
 
       <input id="clientName" class="clean-input" placeholder="Seu Nome *">
       
-      <input id="clientAddress" class="clean-input" placeholder="Rua e Bairro (pelo Mapa) *">
-      <input id="houseNumber" class="clean-input" placeholder="Número da Casa *" type="tel" inputmode="numeric">
+      <div class="addr-row">
+        <input id="clientAddress" class="clean-input addr-grow" placeholder="Rua e Bairro (pelo Mapa) *">
+        <input id="houseNumber" class="clean-input addr-fixed" placeholder="Nº *" type="number" inputmode="numeric">
+      </div>
       
       <div class="section-title">💳 Pagamento</div>
       <div class="pay-list">
@@ -479,7 +483,7 @@
       {"id":"i_xbegg","cat":"hamburgueres","name":"X-Burguer Egg","desc":"Pão, carne, ovo, mussarela, batata, milho, alface, tomate, molho especial","price":17.0, "image":"logo.jpeg"},
       {"id":"i_xcal","cat":"hamburgueres","name":"X-Calabresa","desc":"Pão, carne, calabresa, mussarela, batata, milho, alface, tomate, molho especial","price":17.0, "image":"logo.jpeg"},
       {"id":"i_fbegg","cat":"hamburgueres","name":"Franbacon-Egg","desc":"Pão, frango desfiado, ovo, bacon, batata, alface, tomate, molho especial","price":18.0, "image":"logo.jpeg"},
-      {"id":"i_xbac","cat":"hamburgueres","name":"X-Bacon","desc":"Pão, carne, bacon, mussarela, milho, batata, alface, tomate, molho especial","price":18.0, "image":"xbacon.jpeg"},
+      {"id":"i_xbac","cat":"hamburgueres","name":"X-Bacon","desc":"Pão, carne, bacon, mussarela, milho, batata, alface, tomate, molho especial","price":18.0, "image":"image_0.png"},
       {"id":"i_xbacegg","cat":"hamburgueres","name":"X-Bacon Egg","desc":"Pão, carne, bacon, ovo, mussarela, milho, batata, alface, tomate, molho especial","price":20.0, "image":"logo.jpeg"},
       {"id":"i_xtudo","cat":"hamburgueres","name":"X-Tudo","desc":"Pão, carne, bacon, ovo, presunto, mussarela, calabresa, milho, batata, alface, tomate, molho especial","price":25.0, "image":"xtudo.jpeg"},
       {"id":"i_av","cat":"hamburgueres","name":"Avalanches","desc":"Pão, carne, bacon, frango, ovo, presunto, mussarela, calabresa, cebola roxa, milho, batata, alface, tomate, molho especial","price":27.0, "image":"Avalanche.jpeg"},
